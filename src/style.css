@@ -1,28 +1,24 @@
 body {
-  font-family: Helvetica, sans-serif;
+  background: #fff;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
   padding: 10px;
 }
 
 .grid-item {
-  background-color: rgb(255, 222, 133);
-  margin: 2%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  border-radius: 10px;
 }
 
 .buttonContainer {
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-
-.pokeimg {
-  width: 200px;
 }

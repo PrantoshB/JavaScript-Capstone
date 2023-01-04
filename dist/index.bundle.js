@@ -370,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: Helvetica, sans-serif;\r\n}\r\n\r\n.grid {\r\n  display: grid;\r\n  grid-template-columns: auto auto auto auto;\r\n  padding: 10px;\r\n}\r\n\r\n.grid-item {\r\n  background-color: rgb(255, 222, 133);\r\n  margin: 2%;\r\n  padding: 20px;\r\n  font-size: 30px;\r\n  text-align: center;\r\n  border-radius: 10px;\r\n}\r\n\r\n.buttonContainer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 5px;\r\n}\r\n\r\n.pokeimg {\r\n  width: 200px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: #fff;\r\n}\r\n\r\n.grid {\r\n  display: grid;\r\n  grid-template-columns: auto auto auto;\r\n  background-color: #2196f3;\r\n  padding: 10px;\r\n}\r\n\r\n.grid-item {\r\n  background-color: rgba(255, 255, 255, 0.8);\r\n  border: 1px solid rgba(0, 0, 0, 0.8);\r\n  padding: 20px;\r\n  font-size: 30px;\r\n  text-align: center;\r\n}\r\n\r\n.buttonContainer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 5px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -493,15 +493,15 @@ let element = '';
 const grid = document.querySelector('.grid');
 const gridLogic = (data) => {
   element += `<div class="grid-item">
- <img class="pokeimg" src=${data.sprites.other['official-artwork'].front_default} />
-  <h3 class="pokename">${data.species.name}</h3>
-  <div class="buttonContainer"><button>Comments</button></div>
+  <div class="imageContainer"><img src=${data.sprites.front_default} /></div>
+  <h3>${data.species.name}</h3>
+  <div class="buttonContainer"><button>Comments</button><button>Reservation</button></div>
   </div>`;
   grid.innerHTML = element;
 };
 
 const fetchData = () => {
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(' https://pokeapi.co/api/v2/pokemon?limit=40&offset=0')
+  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(' https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
     .then((res) => {
       const data = res.data.results;
 
